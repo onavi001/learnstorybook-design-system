@@ -76,6 +76,7 @@
   "readme": "ERROR: No README data found!",
   "_id": "learnstorybook-design-system-template@0.1.0",
   "dependencies": {
+    "cli-table3": "^0.6.3",
     "string-width": "^6.1.0"
   }
 }
