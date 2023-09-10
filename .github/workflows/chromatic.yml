@@ -1,19 +1,23 @@
-# Workflow name
-name: "Chromatic Deployment"
-
-# Event for the workflow
+# Name of our action
+name: 'Chromatic'
+# The event that will trigger the action
 on: push
 
-# List of jobs
+# What the action will do
 jobs:
   test:
-    # Operating System
+    # The operating system it will run on
     runs-on: ubuntu-latest
-    # Job steps
+    # The list of steps that the action will go through
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
+          #👇 Fetches all history so Chromatic can compare against previous builds
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          #👇 Sets the version of Node.js to use
+          node-version: 16
       - run: yarn
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
