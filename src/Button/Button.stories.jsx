@@ -4,6 +4,8 @@ import { Button } from './Button';
 import { Icon } from '../Icon/Icon';
 import { StoryLinkWrapper } from '../LinkWrapper';
 
+import { userEvent, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 const CustomButton = styled.button`
   border: 1px solid green;
@@ -20,6 +22,31 @@ function ButtonWrapper(props) {
 export default {
   title: 'Design System/Button',
   component: Button,
+};
+
+// Other Button stories
+
+/*
+ * New story using the play function.
+ * See https://storybook.js.org/docs/react/writing-stories/play-function
+ * to learn more about the play function.
+ */
+export const WithInteractions = {
+  args: {
+    appearance: 'primary',
+    href: 'http://storybook.js.org',
+    ButtonWrapper: StoryLinkWrapper,
+    children: 'Button',
+  },
+  play: async ({ canvasElement }) => {
+    // Assigns canvas to the component root element
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('link'));
+    expect(canvas.getByRole('link')).toHaveAttribute(
+      'href',
+      'http://storybook.js.org',
+    );
+  },
 };
 
 export const AllButtons = {
