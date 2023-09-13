@@ -1,7 +1,7 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "@navi001/learnstorybook-design-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -83,5 +83,8 @@
   "dependencies": {
     "cli-table3": "^0.6.3",
     "string-width": "^6.1.0"
-  }
+  },
+  "description": "Storybook design systems tutorial",
+  "repository": "https://github.com/onavi001/learnstorybook-design-system.git",
+  "author": "onavi001 <34868568+onavi001@users.noreply.github.com>"
 }
