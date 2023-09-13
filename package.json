@@ -1,6 +1,6 @@
 {
   "name": "@navi001/learnstorybook-design-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -79,7 +79,6 @@
     }
   },
   "readme": "ERROR: No README data found!",
-  "_id": "learnstorybook-design-system-template@0.1.0",
   "dependencies": {
     "cli-table3": "^0.6.3",
     "string-width": "^6.1.0"
